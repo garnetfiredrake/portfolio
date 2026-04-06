@@ -34,7 +34,7 @@ export default function Hero() {
             initial={{ scale: 0, opacity: 0, y: -20 }}
             animate={{ scale: 1, opacity: 1, y: -20 }}
             transition={{ type: "spring", stiffness: 220, damping: 15, delay: 1.2 }}
-            className="inline-flex rounded-full bg-white/50 backdrop-blur-md border border-white/60 p-[clamp(2px,0.2vw,8px)] mb-6 md:mb-8 transition-colors hover:bg-white/70 cursor-default shadow-[0_2px_15px_rgba(0,0,0,0.05)]"
+            className="inline-flex rounded-full bg-white/50 backdrop-blur-md border border-white/60 p-[clamp(2px,0.2vw,8px)] mb-4 md:mb-8 transition-colors hover:bg-white/70 cursor-default shadow-[0_2px_15px_rgba(0,0,0,0.05)]"
           >
             <div className="rounded-full bg-white/20 py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
               <span className="relative flex h-2 w-2 mr-2">
