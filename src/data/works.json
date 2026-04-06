@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01",
+    "title": "B2B2C SaaS Dashboard",
+    "category": "Product Design",
+    "year": "2024",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775475750/cover_elxbzg.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775476049/cover-hover_c6pf5v.png",
+    "link": "https://www.figma.com/deck/yWOoAlSmELQzhYxO176riq",
+    "imagePosition": "left top"
+  },
+  {
+    "id": "02",
+    "title": "Trade Checkup app",
+    "category": "Mobile App",
+    "year": "2020",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775477052/cover_hv6nzf.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775477051/cover_hover_llfy81.png",
+    "imagePosition": "left top",
+    "link": "https://www.figma.com/deck/djeltigbXPsmt2qf7X4x9R"
+  },
+  {
+    "id": "03",
+    "title": "XR Platform UIUX",
+    "category": "Branding",
+    "year": "2023",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775478410/cover_dc0tx8.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775478411/hover_cover_dxaskx.png",
+    "imagePosition": "left top",
+    "link": "https://www.figma.com/deck/uaZ5LmkRpWlm2hmdYvdfjo"
+  },
+  {
+    "id": "04",
+    "title": "Web 3.0 Art Marketplace UI/UX",
+    "category": "UX Research",
+    "year": "2022",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775479116/cover_z8on3g.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775479117/cover_hover_yy1npx.png",
+    "imagePosition": "left top",
+    "link": "https://www.figma.com/proto/vfXx2ZdBx9h6nen39P6a63/ART?page-id=1%3A28&node-id=411-616&viewport=9321%2C2272%2C0.34&t=B2yGLa3qdwB9WR7D-1&scaling=scale-down-width&content-scaling=fixed"
+  },
+  {
+    "id": "05",
+    "title": "Secure Entry Design UI/UX",
+    "category": "UI/UX Design",
+    "year": "2022",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775479675/cover_vqslct.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775479675/cover_hover_vdgsu4.png",
+    "imagePosition": "left top",
+    "link": "https://www.behance.net/gallery/238223993/Secure-Entry-Design"
+  },
+  {
+    "id": "06",
+    "title": "Allexir VI Design",
+    "category": "Prototyping",
+    "year": "2021",
+    "image": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775480589/cover_wa9woa.png",
+    "hoverImage": "https://res.cloudinary.com/dvxauqlxe/image/upload/q_auto/f_auto/v1775480590/cover_hover_nzkysg.png",
+    "imagePosition": "left top",
+    "link": "https://www.figma.com/deck/ToZ5XOC17L3vqxffjj5nHM"
+  }
+]

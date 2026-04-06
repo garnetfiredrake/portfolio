@@ -1,3 +1,5 @@
+import Star from './Star';
+
 export default function Marquee() {
   const words = ["UX RESEARCH", "UI DESIGN", "PROTOTYPING", "BRAND IDENTITY", "DESIGN SYSTEMS"];
   const list = [...words, ...words, ...words, ...words, ...words, ...words];
@@ -10,8 +12,8 @@ export default function Marquee() {
             <span className="font-serif italic text-white/95 text-[22px] leading-none pb-[7px]">
               {word.toLowerCase()}
             </span>
-            <span className="mx-[clamp(32px,3vw,100px)] text-white text-[18px] leading-none flex items-center justify-center">
-              ✦
+            <span className="mx-[clamp(32px,3vw,100px)] text-white flex items-center justify-center">
+              <Star className="w-[18px] h-[18px]" />
             </span>
           </div>
         ))}

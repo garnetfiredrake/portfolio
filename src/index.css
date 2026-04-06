@@ -37,3 +37,49 @@ html {
 @utility animate-marquee {
   animation: marquee 35s linear infinite;
 }
+
+@keyframes holographic {
+  0% { background-position: 0% 50%; opacity: 0.15; }
+  50% { background-position: 100% 50%; opacity: 0.25; }
+  100% { background-position: 0% 50%; opacity: 0.15; }
+}
+
+@utility bg-holographic {
+  background: linear-gradient(
+    135deg, 
+    #ffc0cb 0%, 
+    #ff1493 15%, 
+    #adff2f 30%, 
+    #00ffff 45%, 
+    #7b68ee 60%, 
+    #ee82ee 75%, 
+    #ffc0cb 90%
+  );
+  background-size: 400% 400%;
+}
+
+@utility animate-holographic {
+  animation: holographic 12s ease-in-out infinite alternate;
+}
+
+@utility premium-gradient-text {
+  background: linear-gradient(
+    -45deg, 
+    #FFFFFF 0%,
+    #E0C3FC 20%, 
+    #8EC5FC 40%, 
+    #E0C3FC 60%, 
+    #FFFFFF 80%,
+    #8EC5FC 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: premium-gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes premium-gradient-shift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
