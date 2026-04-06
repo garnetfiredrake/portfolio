@@ -6,6 +6,7 @@ import Services from './components/Services';
 import SelectedWorks from './components/SelectedWorks';
 import Philosophy from './components/Philosophy';
 import Footer from './components/Footer';
+import MuxPlayer from "@mux/mux-player-react";
 
 export default function App() {
   const { scrollY } = useScroll();
@@ -16,13 +17,14 @@ export default function App() {
   return (
     <div className="relative min-h-screen w-full flex flex-col selection:bg-white/20 overflow-x-hidden">
       {/* Background Video - Fixed so it acts as base for entire scrolling page */}
-      <video
-        autoPlay
+      <MuxPlayer
+        playbackId="WslAOdcIprA3J00zcgLLf8HMP4RrPTLy9RKFNVQIbfTc"
+        autoPlay="muted"
         loop
         muted
         playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_2yHSJCXypaKzALrUyDYh61V0nyk/hf_20260404_161026_2271dc3b-ebd7-4f22-a673-f2c5b9fb06b3.mp4"
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none"
+        style={{ '--media-object-fit': 'cover' }}
       />
 
       {/* Progressive Scroll Glass Overlay */}
