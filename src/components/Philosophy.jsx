@@ -38,7 +38,7 @@ export default function Philosophy() {
             </div>
 
             {/* Impact Numbers */}
-            <div className="flex-1 flex justify-center border-l border-white/10 pl-0 md:pl-16">
+            <div className="flex-1 flex justify-center border-l-0 md:border-l border-white/10 pl-0 md:pl-16">
               <div className="grid grid-cols-2 gap-x-8 md:gap-x-16 gap-y-12 w-full">
                 <Counter end={40} suffix="+" label="Projects Delivered" isInView={isInView} />
                 <Counter end={100} suffix="%" label="On-time Delivery" isInView={isInView} />
