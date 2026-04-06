@@ -90,7 +90,7 @@ function ServiceRow({ service, index, containerRef }) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 2.5, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 }}
+        transition={{ duration: 3.2, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 }}
         className="relative z-20 flex items-center gap-6 md:gap-12 transition-transform duration-500 group-hover:translate-x-4"
       >
         <span className="font-serif italic text-white/30 text-[clamp(24px,2vw,40px)] group-hover:text-white transition-colors duration-500">
@@ -106,7 +106,7 @@ function ServiceRow({ service, index, containerRef }) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
-        transition={{ duration: 2.5, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 + 0.1 }}
+        transition={{ duration: 3.2, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 + 0.1 }}
         className="relative z-20 mt-4 md:mt-0 text-white/60 font-sans text-[clamp(14px,1vw,18px)] max-w-sm md:text-right transition-opacity duration-500 opacity-100 md:opacity-40 group-hover:opacity-100"
       >
         {service.description}
