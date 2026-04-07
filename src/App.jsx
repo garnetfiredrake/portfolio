@@ -28,7 +28,7 @@ export default function App() {
   // 1.8s - 1.925s: Static 0-th frame holds absolutely perfectly still for 0.125s.
   // 1.925s: Lock releases! Static frame hard-cuts to moving video, and Hero text orchestrates.
   useEffect(() => {
-    const choreographyTimer = setTimeout(() => setIsVideoReady(true), 6000);
+    const choreographyTimer = setTimeout(() => setIsVideoReady(true), 900);
     return () => clearTimeout(choreographyTimer);
   }, []);
 
@@ -68,27 +68,35 @@ export default function App() {
         />
       )}
 
-      {/* Layer 2: PINTEREST PINK GRADIENT (The abstract Dark-to-Light phase) */}
+      {/* Layer 2: ELEGANT BLUR DISSOLVE (Slowly reveals the video) */}
       <motion.div
         className="fixed inset-0 w-full h-full z-[2] pointer-events-none"
         style={{ 
-          background: "radial-gradient(circle at center, transparent 0%, #E6CCD7 30%, #D89CAE 100%)"
+          background: "linear-gradient(to bottom, #E6CCD7, #D89CAE, #CD7D94)"
         }}
-        initial={{ opacity: 1, filter: "blur(60px)", scale: 1 }}
-        animate={{ opacity: 0, filter: "blur(0px)", scale: 12 }}
+        initial={{ 
+          opacity: 0.95, 
+          filter: "blur(80px)", 
+          scale: typeof window !== 'undefined' && window.innerWidth < 768 ? 1.6 : 1.25 
+        }}
+        animate={{ 
+          opacity: 0, 
+          filter: "blur(0px)", 
+          scale: typeof window !== 'undefined' && window.innerWidth < 768 ? 1.6 : 1.25 
+        }}
         transition={{ 
-          delay: 1.5, 
-          duration: 4.5, 
-          ease: [0.22, 1, 0.36, 1] // QuintOut for ultra-smooth perspective expansion
+          delay: 0.9, 
+          duration: 3.7, 
+          ease: "easeInOut"
         }} 
       />
 
-      {/* Layer 3: PURE BLACK CINEMATIC CURTAIN (Fades out immediately to reveal Dark-to-Light Pink) */}
+      {/* Layer 3: PURE BLACK CINEMATIC CURTAIN */}
       <motion.div 
         className="fixed inset-0 w-full h-full bg-[#0a0a0a] z-[3] pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 1.5, ease: "easeOut" }} // Fades exactly in the first 1.5s
+        transition={{ duration: 0.9, ease: "easeOut" }} // Fades exactly in the first 0.9s
       />
 
       {/* Progressive Scroll Glass Overlay */}
