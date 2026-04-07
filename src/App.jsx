@@ -11,6 +11,15 @@ import MuxPlayer from "@mux/mux-player-react";
 
 export default function App() {
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Responsive Hook: Detect breakpoint exclusively for swapping native MUX media assets
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    checkMobile(); // Check on initial mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Absolute Choreographic Timeline:
   // 0.0s - 1.0s: Pure black smoothly dissolves to reveal Pinterest Pink Gradient (Dark-to-Light).
@@ -22,6 +31,10 @@ export default function App() {
     return () => clearTimeout(choreographyTimer);
   }, []);
 
+  const videoId = isMobile ? "NlrfzJPyWXj01XsiHFQP7E8RDuZfId3PkXZr2f1kwU6o" : "o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw";
+  // Force 1280px width thumbnail request to bypass MUX's generic 640px default and guarantee 3x Retina display clarity
+  const posterUrl = `https://image.mux.com/${videoId}/thumbnail.jpg?time=0&width=1280`;
+
   const { scrollY } = useScroll();
   
   // Fade in the glass overlay as user scrolls down the first 800px
@@ -30,12 +43,13 @@ export default function App() {
   return (
     <div className="relative min-h-screen w-full flex flex-col selection:bg-white/20 overflow-x-hidden">
       <MuxPlayer
-        playbackId="o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw"
-        poster="https://image.mux.com/o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw/thumbnail.jpg?time=0"
+        playbackId={videoId}
+        poster={posterUrl}
         autoPlay="muted"
         loop
         muted
         playsInline
+        minResolution="720p"
         className="fixed inset-0 w-full h-full z-0 pointer-events-none"
         style={{ 
           '--media-object-fit': 'cover',
@@ -47,7 +61,7 @@ export default function App() {
       {/* Layer 1: STATIC 0-TH FRAME MASK (Holds the video perfectly still) */}
       {!isVideoReady && (
         <img
-          src="https://image.mux.com/o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw/thumbnail.jpg?time=0"
+          src={posterUrl}
           className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none"
           alt="Intro Frame"
         />

@@ -32,9 +32,15 @@ export default function SelectedWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
-            className="font-bodoni italic text-white text-[clamp(20px,2vw,36px)] leading-tight whitespace-nowrap"
+            className="font-bodoni italic text-white text-[clamp(20px,2vw,36px)] leading-tight"
           >
-            Featured projects highlighting strategy & craft.
+            <span className="hidden md:inline whitespace-nowrap">
+              Featured projects highlighting strategy & craft.
+            </span>
+            <span className="inline md:hidden">
+              Featured projects highlighting <br />
+              strategy & craft.
+            </span>
           </motion.h2>
         </div>
 

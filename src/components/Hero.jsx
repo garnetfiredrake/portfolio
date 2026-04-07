@@ -8,14 +8,14 @@ export default function Hero() {
   return (
     <main className="relative z-10 flex-1 flex flex-col items-center px-4 md:px-6 w-full pb-[6vh] md:pb-[8vh]">
       {/* Main Title Group - Responsive absolute positioning */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[280px] md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[clamp(20px,1.04vw,50px)] text-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5vh+60px)] md:top-1/2 md:-translate-y-1/2 md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[clamp(20px,1.04vw,50px)] text-center scale-[1.2] md:scale-100 origin-top">
 
         {/* Corner Accents */}
         {[
-          "top-[clamp(20px,1.56vw,60px)] left-0 min-[2000px]:mt-[25px]",
-          "top-[clamp(20px,1.56vw,60px)] right-0 min-[2000px]:mt-[25px]",
-          "-bottom-[15px] left-0 min-[2000px]:-bottom-[55px]",
-          "-bottom-[15px] right-0 min-[2000px]:-bottom-[55px]"
+          "top-[clamp(15px,1.56vw,60px)] left-0 min-[2000px]:mt-[25px]",
+          "top-[clamp(15px,1.56vw,60px)] right-0 min-[2000px]:mt-[25px]",
+          "bottom-[5px] md:-bottom-[15px] left-0 min-[2000px]:-bottom-[55px]",
+          "bottom-[5px] md:-bottom-[15px] right-0 min-[2000px]:-bottom-[55px]"
         ].map((positionClass, i) => (
           <motion.div 
             key={i}
@@ -58,6 +58,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          {/* Dynamic Headline */}
           {/* Dynamic Headline */}
           <h1 className="text-center flex flex-col items-center justify-center mb-0 w-full relative z-10">
             <span className="font-serif italic text-white text-[clamp(32px,8vw,48px)] md:text-[clamp(48px,6vw,282px)] leading-none whitespace-nowrap inline-flex tracking-tight">
@@ -136,7 +137,13 @@ export default function Hero() {
             I design intuitive UI/UX for web, apps, SaaS dashboards and cross-platform setups.
           </span>
           <br />
-          Elevating your brand with cohesive VI and identity design.
+          <span className="hidden md:inline">
+            Elevating your brand with cohesive VI and identity design.
+          </span>
+          <span className="inline md:hidden">
+            Elevating your brand <br />
+            with cohesive VI and identity design.
+          </span>
         </motion.p>
       </div>
     </main>
