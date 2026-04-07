@@ -16,7 +16,7 @@ export default function Footer() {
         
         {/* Epic Giant Text */}
         <h2 className="font-sans text-[clamp(48px,12vw,240px)] leading-[0.8] font-bold text-white tracking-tighter uppercase relative w-fit mb-0">
-          <span className="relative z-10 inline-block cursor-pointer pr-[0.1em] premium-gradient-text text-transparent">
+          <span className="relative z-10 inline-block pr-[0.1em] premium-gradient-text text-transparent">
             LET'S TALK
           </span>
         </h2>
