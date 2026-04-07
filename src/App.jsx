@@ -28,7 +28,7 @@ export default function App() {
   // 1.8s - 1.925s: Static 0-th frame holds absolutely perfectly still for 0.125s.
   // 1.925s: Lock releases! Static frame hard-cuts to moving video, and Hero text orchestrates.
   useEffect(() => {
-    const choreographyTimer = setTimeout(() => setIsVideoReady(true), 1925);
+    const choreographyTimer = setTimeout(() => setIsVideoReady(true), 6000);
     return () => clearTimeout(choreographyTimer);
   }, []);
 
@@ -70,10 +70,17 @@ export default function App() {
 
       {/* Layer 2: PINTEREST PINK GRADIENT (The abstract Dark-to-Light phase) */}
       <motion.div
-        className="fixed inset-0 w-full h-full bg-gradient-to-b from-[#E6CCD7] via-[#D89CAE] to-[#CD7D94] z-[2] pointer-events-none"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ delay: 1.0, duration: 0.8, ease: "easeInOut" }} // Starts fading precisely when Layer 3 finishes
+        className="fixed inset-0 w-full h-full z-[2] pointer-events-none"
+        style={{ 
+          background: "radial-gradient(circle at center, transparent 0%, #E6CCD7 30%, #D89CAE 100%)"
+        }}
+        initial={{ opacity: 1, filter: "blur(60px)", scale: 1 }}
+        animate={{ opacity: 0, filter: "blur(0px)", scale: 12 }}
+        transition={{ 
+          delay: 1.5, 
+          duration: 4.5, 
+          ease: [0.22, 1, 0.36, 1] // QuintOut for ultra-smooth perspective expansion
+        }} 
       />
 
       {/* Layer 3: PURE BLACK CINEMATIC CURTAIN (Fades out immediately to reveal Dark-to-Light Pink) */}
@@ -81,7 +88,7 @@ export default function App() {
         className="fixed inset-0 w-full h-full bg-[#0a0a0a] z-[3] pointer-events-none"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 1.0, ease: "easeOut" }} // Fades exactly in the first 1.0s
+        transition={{ duration: 1.5, ease: "easeOut" }} // Fades exactly in the first 1.5s
       />
 
       {/* Progressive Scroll Glass Overlay */}
