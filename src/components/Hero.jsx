@@ -5,12 +5,12 @@ export default function Hero() {
   return (
     <main className="relative z-10 flex-1 flex flex-col items-center px-4 md:px-6 w-full pb-[6vh] md:pb-[8vh]">
       {/* Main Title Group - Responsive absolute positioning */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[310px] md:top-[-10px] md:translate-y-0 md:mt-0 w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[20px] text-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[310px] md:-mt-[42vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[20px] text-center">
 
         {/* Corner Accents */}
         {[
-          "top-0 left-0",
-          "top-0 right-0",
+          "top-[30px] left-0",
+          "top-[30px] right-0",
           "bottom-0 left-0",
           "bottom-0 right-0"
         ].map((positionClass, i) => (
@@ -31,16 +31,12 @@ export default function Hero() {
         <div className="flex flex-col items-center">
           {/* Featured Badge */}
           <motion.div 
-            initial={{ scale: 0, opacity: 0, y: -20 }}
-            animate={{ scale: 1, opacity: 1, y: -20 }}
+            initial={{ scale: 0, opacity: 0, y: 10 }}
+            animate={{ scale: 1, opacity: 1, y: 10 }}
             transition={{ type: "spring", stiffness: 220, damping: 15, delay: 1.2 }}
-            className="inline-flex rounded-full bg-white/50 backdrop-blur-md border border-white/60 p-[clamp(2px,0.2vw,8px)] mb-2 md:mb-8 transition-colors hover:bg-white/70 cursor-default shadow-[0_2px_15px_rgba(0,0,0,0.05)]"
+            className="inline-flex mb-2 md:mb-8 cursor-default"
           >
-            <div className="rounded-full bg-white/20 py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
-              <span className="relative flex h-2 w-2 mr-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#804B5A] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#804B5A]"></span>
-              </span>
+            <div className="py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
               <span className="text-[#804B5A] text-[clamp(10px,0.65vw,24px)] font-sans font-semibold tracking-[0.1em] uppercase">
                 Featured UI/UX Work
               </span>

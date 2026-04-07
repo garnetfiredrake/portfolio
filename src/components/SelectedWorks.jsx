@@ -12,17 +12,17 @@ export default function SelectedWorks() {
     >
       <div className="w-full flex flex-col">
         
-        {/* Header - Auto Layout (Flex) merged into one line */}
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 mb-16 md:mb-24 flex flex-col lg:flex-row lg:items-center justify-between gap-6 lg:gap-12 py-2">
+        {/* Header */}
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 mb-16 md:mb-24 flex flex-col gap-4 py-2">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
-            className="inline-flex rounded-full bg-white/5 backdrop-blur-md border border-white/20 p-[6px] w-fit shadow-[0_2px_15px_rgba(0,0,0,0.2)]"
+            className="inline-flex w-fit"
           >
-            <div className="rounded-full bg-white/10 py-2 px-6 flex items-center justify-center">
-              <span className="text-white text-sm font-sans font-semibold tracking-[0.1em] uppercase">
+            <div className="py-2 flex items-center">
+              <span className="text-white font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)]">
                 Selected Works
               </span>
             </div>
@@ -32,7 +32,7 @@ export default function SelectedWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
-            className="font-serif italic text-white text-[clamp(24px,3vw,56px)] leading-tight lg:text-right whitespace-nowrap"
+            className="font-bodoni italic text-white text-[clamp(24px,3vw,56px)] leading-tight whitespace-nowrap"
           >
             Featured projects highlighting strategy & craft.
           </motion.h2>

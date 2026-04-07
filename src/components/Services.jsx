@@ -30,15 +30,19 @@ export default function Services() {
   return (
     <section 
       ref={containerRef}
-      className="relative z-10 w-full min-h-[90vh] py-24 md:py-32 flex flex-col justify-center items-center px-4 md:px-8 border-b border-white/10"
+      className="relative z-10 w-full min-h-[90vh] py-24 md:py-32 flex flex-col justify-center items-center px-4 md:px-8 border-b border-white/10 -mt-[25px]"
     >
       <div className="w-full max-w-7xl mx-auto flex flex-col">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6">
-          <h2 className="font-sans text-white text-[clamp(14px,1vw,18px)] tracking-[0.2em] uppercase text-white/60">
-            Core Competencies
-          </h2>
-          <p className="font-serif italic text-white/90 text-[clamp(20px,2vw,36px)] max-w-md">
+        <div className="flex flex-col gap-4 mb-16 md:mb-24 translate-y-[12px]">
+          <div className="inline-flex w-fit">
+            <div className="py-2 flex items-center">
+              <h2 className="font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)] text-white/60">
+                Core Competencies
+              </h2>
+            </div>
+          </div>
+          <p className="font-bodoni italic text-white/90 text-[clamp(20px,2vw,36px)] whitespace-normal md:whitespace-nowrap">
             Bridging the gap between aesthetic form and seamless function.
           </p>
         </div>

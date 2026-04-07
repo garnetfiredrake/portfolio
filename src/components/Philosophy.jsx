@@ -29,8 +29,8 @@ export default function Philosophy() {
               <h2 className="font-sans text-[#804B5A] text-sm uppercase tracking-[0.2em] font-semibold mb-6">
                 Design Philosophy
               </h2>
-              <h3 className="font-serif italic text-white text-[clamp(32px,4vw,64px)] leading-[1.1] mb-8">
-                Good design is obvious. Great design is transparent.
+              <h3 className="font-bodoni italic text-white text-[clamp(32px,4vw,64px)] leading-[1.1] mb-8">
+                Good design is obvious.<br />Great design is transparent.
               </h3>
               <p className="font-sans text-white/70 text-lg md:text-xl leading-relaxed max-w-xl">
                 I believe that digital products should not only look stunning but fundamentally solve user problems. By merging strategic UX research with high-fidelity visual craft, I build experiences that humans love to use and businesses rely on.
@@ -88,7 +88,7 @@ function Counter({ end, suffix, label, isInView }) {
       >
         {count}{suffix}
       </div>
-      <div className="font-serif italic text-white/50 text-[clamp(14px,1vw,18px)]">
+      <div className="font-bodoni italic text-white/50 text-[clamp(14px,1vw,18px)]">
         {label}
       </div>
     </div>
