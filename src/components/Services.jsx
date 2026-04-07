@@ -4,22 +4,22 @@ import { motion } from 'framer-motion';
 const services = [
   {
     title: 'UX RESEARCH',
-    description: <>Understanding user behaviors <br className="hidden md:block lg:hidden" />and market needs.</>,
+    description: <>Understanding user behaviors <br className="hidden md:block xl:hidden" />and market needs.</>,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', // Data/Analytics Dashboard
   },
   {
     title: 'UI DESIGN',
-    description: <>Crafting pixel-perfect, <br className="hidden md:block lg:hidden" />aesthetic interfaces.</>,
+    description: <>Crafting pixel-perfect, <br className="hidden md:block xl:hidden" />aesthetic interfaces.</>,
     image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?q=80&w=800&auto=format&fit=crop', // Clean UI/Mobile Mockup
   },
   {
     title: 'PROTOTYPING',
-    description: <>Breathing life into <br className="hidden md:block lg:hidden" />static designs via motion.</>,
+    description: <>Breathing life into <br className="hidden md:block xl:hidden" />static designs via motion.</>,
     image: 'https://images.unsplash.com/photo-1541462608143-67571c6738dd?q=80&w=800&auto=format&fit=crop', // Code/Motion
   },
   {
     title: 'BRAND IDENTITY',
-    description: <>Building cohesive visual <br className="hidden md:block lg:hidden" />systems and guidelines.</>,
+    description: <>Building cohesive visual <br className="hidden md:block xl:hidden" />systems and guidelines.</>,
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop', // Brand Guidelines/Colours
   },
 ];
@@ -37,12 +37,12 @@ export default function Services() {
         <div className="flex flex-col gap-4 mb-16 md:mb-24 translate-y-[12px]">
           <div className="inline-flex w-fit">
             <div className="py-2 flex items-center">
-              <h2 className="font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)] md:text-[18px] lg:text-[clamp(10px,0.65vw,24px)] text-white/60">
+              <h2 className="font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)] md:text-[18px] xl:text-[clamp(10px,0.65vw,24px)] text-white/60">
                 Core Competencies
               </h2>
             </div>
           </div>
-          <p className="font-bodoni italic text-white/90 text-[clamp(20px,2vw,36px)] md:text-[46px] lg:text-[clamp(20px,2vw,36px)] leading-tight whitespace-normal md:whitespace-normal lg:whitespace-nowrap">
+          <p className="font-bodoni italic text-white/90 text-[clamp(20px,2vw,36px)] md:text-[46px] xl:text-[clamp(20px,2vw,36px)] leading-tight whitespace-normal md:whitespace-normal xl:whitespace-nowrap">
             Bridging the gap between aesthetic form and seamless function.
           </p>
         </div>
@@ -93,7 +93,7 @@ function ServiceRow({ service, index, containerRef }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 3.2, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 + 0.1 }}
-        className="relative z-20 mt-4 md:mt-0 text-white/60 font-sans text-[clamp(14px,1vw,18px)] md:text-[22px] lg:text-[clamp(14px,1vw,18px)] md:leading-[1.6] lg:leading-normal max-w-sm md:text-right opacity-100"
+        className="relative z-20 mt-4 md:mt-0 text-white/60 font-sans text-[clamp(14px,1vw,18px)] md:text-[22px] xl:text-[clamp(14px,1vw,18px)] md:leading-[1.6] xl:leading-normal max-w-sm md:text-right opacity-100"
       >
         {service.description}
       </motion.div>

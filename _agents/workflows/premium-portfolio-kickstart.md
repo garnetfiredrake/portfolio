@@ -22,6 +22,12 @@ description: 零從頭打造 Aiden 級距的高端個人作品集架構 (Enginee
 4. **極簡留白比例**
    - 模組與模組之間的 margin 必須具備宏大感 (例如 `py-24 md:py-40`)，文字與標籤若要產生視覺群聚心理，就必須縮至 `8px-16px`。
 
+5. **最高維度的跨裝置響應對策 (Responsive Override Strategies)**
+   - 重新定義邊界：傳統的 Tailwind `lg:` (1024px) 會導致 iPad Pro 被判定為桌面佈局而潰敗。請在 `index.css` 的 `@theme` 植入 `--breakpoint-lg: 1025px;` 將其徹底封存於 `md:` 層疊中。
+   - 放棄原生的 Object-Fit 服從度：針對背景串流 (Mux) 的視窗縮放若發生 Letterboxing (黑邊漏出)，直接拔升 `minResolution="2160p"` 獲取 4K 源碼，並透過幾何滿版放縮 (如 `scale-[1.31]`) 配合 X 軸精細 `translate`，暴力斬除預設框架帶來的渲染缺陷。
+   - 保護巨型文字佈局：當雙欄佈局 (文案 vs 數據) 面臨平板物理空間擠壓時，應立即取消五五分帳的僵化作法 (`flex-1 / flex-1`)，轉換為不對稱比例 (如 `w-[40%] / w-[60%]`) 並調降外層天花板 `padding`，以全力護航數字排版的磅礡張力。
+   - 手工防禦：針對 iPad Mini (768px)、Air (820px) 與 Pro (1024px) 這種高度密集的設備區間，傳統斷點會失效。請使用 Tailwind 的動態範圍指令 `min-[768px]:max-[819px]:` 來精確孤立特定設備，進行 20px 等級的手工位移或比例重調，確保「局部微整形」絕不溢出影響到其它裝置。
+
 ---
 
 ## 第二部分：自動化工程基準 (Engineering Workflow)

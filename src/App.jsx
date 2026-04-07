@@ -51,7 +51,7 @@ export default function App() {
         muted
         playsInline
         minResolution="2160p"
-        className="fixed inset-0 w-full h-full z-0 pointer-events-none object-cover transform-gpu md:scale-[1.31] lg:scale-100 md:-translate-x-[4px] lg:translate-x-0"
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none object-cover transform-gpu md:scale-[1.35] xl:scale-100 md:-translate-x-[4px] xl:translate-x-0"
         style={{ 
           '--media-object-fit': 'cover',
           '--media-loading-indicator-display': 'none',
@@ -63,7 +63,7 @@ export default function App() {
       {!isVideoReady && (
         <img
           src={posterUrl}
-          className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none transform-gpu md:scale-[1.31] lg:scale-100 md:-translate-x-[4px] lg:translate-x-0"
+          className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none transform-gpu md:scale-[1.35] xl:scale-100 md:-translate-x-[4px] xl:translate-x-0"
           alt="Intro Frame"
         />
       )}

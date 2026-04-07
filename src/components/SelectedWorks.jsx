@@ -22,7 +22,7 @@ export default function SelectedWorks() {
             className="inline-flex w-fit"
           >
             <div className="py-2 flex items-center">
-              <span className="text-white font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)] md:text-[18px] lg:text-[clamp(10px,0.65vw,24px)]">
+              <span className="text-white font-sans font-semibold tracking-[0.1em] uppercase whitespace-nowrap text-[clamp(10px,0.65vw,24px)] md:text-[18px] xl:text-[clamp(10px,0.65vw,24px)]">
                 Selected Works
               </span>
             </div>
@@ -32,14 +32,14 @@ export default function SelectedWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
-            className="font-bodoni italic text-white text-[clamp(20px,2vw,36px)] md:text-[46px] lg:text-[clamp(20px,2vw,36px)] leading-tight whitespace-normal md:whitespace-normal lg:whitespace-nowrap"
+            className="font-bodoni italic text-white text-[clamp(20px,2vw,36px)] md:text-[46px] xl:text-[clamp(20px,2vw,36px)] leading-tight whitespace-normal md:whitespace-normal xl:whitespace-nowrap"
           >
             Featured projects highlighting strategy & craft.
           </motion.h2>
         </div>
 
         {/* Adaptive Grid - Full Bleed, Zero Gap */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -103,10 +103,10 @@ function ProjectCard({ project, index }) {
         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: 0.1 }}
         className="pt-2 pb-8 px-2 flex flex-col font-sans tracking-wide"
       >
-        <span className="text-white/90 text-[11px] md:text-[18px] lg:text-[11px] font-medium leading-tight">
+        <span className="text-white/90 text-[11px] md:text-[18px] xl:text-[11px] font-medium leading-tight">
           {project.title}
         </span>
-        <span className="text-white/40 text-[11px] md:text-[16px] lg:text-[11px] leading-tight mt-[2px]">
+        <span className="text-white/40 text-[11px] md:text-[16px] xl:text-[11px] leading-tight mt-[2px]">
           {project.year}
         </span>
       </motion.div>
