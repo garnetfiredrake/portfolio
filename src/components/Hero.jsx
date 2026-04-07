@@ -1,28 +1,43 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Star from './Star';
 
 export default function Hero() {
+  const [starLanded, setStarLanded] = useState([false, false, false, false]);
+
   return (
     <main className="relative z-10 flex-1 flex flex-col items-center px-4 md:px-6 w-full pb-[6vh] md:pb-[8vh]">
       {/* Main Title Group - Responsive absolute positioning */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[280px] md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[20px] text-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[280px] md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[clamp(20px,1.04vw,50px)] text-center">
 
         {/* Corner Accents */}
         {[
-          "top-[30px] left-0",
-          "top-[30px] right-0",
-          "bottom-0 left-0",
-          "bottom-0 right-0"
+          "top-[clamp(20px,1.56vw,60px)] left-0 min-[2000px]:mt-[25px]",
+          "top-[clamp(20px,1.56vw,60px)] right-0 min-[2000px]:mt-[25px]",
+          "-bottom-[15px] left-0 min-[2000px]:-bottom-[55px]",
+          "-bottom-[15px] right-0 min-[2000px]:-bottom-[55px]"
         ].map((positionClass, i) => (
           <motion.div 
             key={i}
-            initial={{ opacity: 0, scale: 3, rotate: 180 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.9 + (i * 0.1) }}
+            initial={{ opacity: 0, scale: 0, rotate: -360 }}
+            animate={{ opacity: 1, scale: [0, 5.5, 1], rotate: 0 }}
+            transition={{ 
+              delay: 1.5 + (i * 0.195),
+              opacity: { duration: 0.6 },
+              scale: { duration: 1.2, times: [0, 0.45, 1], ease: ["easeOut", "easeInOut"] },
+              rotate: { duration: 1.2, ease: [0.6, 0.01, -0.05, 0.95] }
+            }}
+            onAnimationComplete={() => {
+              setStarLanded(prev => {
+                const next = [...prev];
+                next[i] = true;
+                return next;
+              });
+            }}
             className={`absolute ${positionClass}`}
           >
-            <div className="text-white animate-reticle">
-              <Star className="w-[clamp(10px,0.7vw,18px)] h-[clamp(10px,0.7vw,18px)]" />
+            <div className={`text-white animate-reticle ${!starLanded[i] ? '[animation-duration:1.6s]' : ''}`}>
+              <Star className="w-[clamp(10px,0.7vw,28px)] h-[clamp(10px,0.7vw,28px)]" />
             </div>
           </motion.div>
         ))}
@@ -31,9 +46,9 @@ export default function Hero() {
         <div className="flex flex-col items-center min-[2560px]:translate-y-[20px]">
           {/* Featured Badge */}
           <motion.div 
-            initial={{ scale: 0, opacity: 0, y: 10 }}
-            animate={{ scale: 1, opacity: 1, y: 10 }}
-            transition={{ type: "spring", stiffness: 220, damping: 15, delay: 1.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
             className="inline-flex mb-2 md:mb-8 cursor-default"
           >
             <div className="py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
@@ -49,11 +64,12 @@ export default function Hero() {
               {"web, apps & branding".split('').map((char, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ 
-                    delay: 0.2 + (index * 0.04), 
-                    duration: 0.05 
+                    delay: 0.2 + (index * 0.03), 
+                    duration: 0.6,
+                    ease: "easeOut"
                   }}
                 >
                   {char === ' ' ? '\u00A0' : char}
