@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
         <button 
           onClick={scrollToTop}
-          className="font-sans text-white/60 hover:text-white text-sm uppercase tracking-widest flex items-center gap-2 group transition-colors"
+          className="font-sans text-white/60 hover:text-white text-sm uppercase tracking-widest flex items-center gap-2 group transition-colors cursor-pointer"
         >
           Back to Top
           <svg className="w-4 h-4 transform transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
