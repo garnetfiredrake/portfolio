@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <main className="relative z-10 flex-1 flex flex-col items-center px-4 md:px-6 w-full pb-[6vh] md:pb-[8vh]">
       {/* Main Title Group - Responsive absolute positioning */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5vh+60px)] md:top-1/2 md:-translate-y-1/2 md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[clamp(20px,1.04vw,50px)] text-center scale-[1.2] md:scale-100 origin-top">
+      <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5vh-5px)] md:top-[calc(12vh-120px)] lg:top-1/2 lg:-translate-y-1/2 lg:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[clamp(20px,1.04vw,50px)] text-center scale-[1.2] md:scale-[1.8] lg:scale-100 origin-top lg:origin-center">
 
         {/* Corner Accents */}
         {[
@@ -49,7 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
-            className="inline-flex mb-2 md:mb-8 cursor-default"
+            className="inline-flex mb-2 md:mb-8 md:translate-y-[10px] lg:translate-y-0 cursor-default"
           >
             <div className="py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
               <span className="text-[#804B5A] text-[clamp(10px,0.65vw,53px)] font-sans font-semibold tracking-[0.1em] uppercase">
@@ -84,12 +84,11 @@ export default function Hero() {
 
       {/* Bottom Actions - Auto Layout anchored to bottom */}
       <div className="flex flex-col items-center mt-auto w-full max-w-3xl px-4 md:px-8">
-        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 25 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.8, type: "spring", stiffness: 90, damping: 20 }}
-          className="w-full flex justify-center"
+          className="w-full flex justify-center md:scale-[1.8] lg:scale-100 md:translate-y-[85px] lg:translate-y-0"
         >
           <motion.button 
             initial="initial"
@@ -131,18 +130,26 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.25, duration: 0.8, ease: "easeOut" }}
-          className="font-sans text-white/95 w-full text-center text-[clamp(14px,0.83vw,32px)] leading-relaxed [text-shadow:0_4px_16px_rgba(128,75,90,0.85)]"
+          className="font-sans text-white/95 w-full text-center text-[clamp(14px,0.83vw,32px)] md:text-[22px] lg:text-[clamp(14px,0.83vw,32px)] md:leading-[1.6] lg:leading-relaxed leading-relaxed [text-shadow:0_4px_16px_rgba(128,75,90,0.85)] mt-4 md:mt-24 lg:mt-4 px-4"
         >
-          <span className="landscape:whitespace-nowrap portrait:whitespace-normal">
-            I design intuitive UI/UX for web, apps, SaaS dashboards and cross-platform setups.
-          </span>
-          <br />
-          <span className="hidden md:inline">
-            Elevating your brand with cohesive VI and identity design.
-          </span>
-          <span className="inline md:hidden">
+          {/* MOBILE ONLY */}
+          <span className="inline md:hidden portrait:whitespace-normal">
+            I design intuitive UI/UX for web, apps, SaaS dashboards and cross-platform setups. <br />
             Elevating your brand <br />
             with cohesive VI and identity design.
+          </span>
+          
+          {/* IPAD ONLY */}
+          <span className="hidden md:inline lg:hidden">
+            I design intuitive UI/UX for web, apps, <br />
+            SaaS dashboards and cross-platform setups. <br />
+            Elevating your brand with cohesive VI and identity design.
+          </span>
+
+          {/* DESKTOP ONLY */}
+          <span className="hidden lg:inline landscape:whitespace-nowrap">
+            I design intuitive UI/UX for web, apps, SaaS dashboards and cross-platform setups. <br />
+            Elevating your brand with cohesive VI and identity design.
           </span>
         </motion.p>
       </div>

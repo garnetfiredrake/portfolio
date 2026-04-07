@@ -17,29 +17,29 @@ export default function Philosophy() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative w-full rounded-[32px] md:rounded-[48px] overflow-hidden bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-8 md:p-24"
+          className="relative w-full rounded-[32px] md:rounded-[48px] overflow-hidden bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-8 md:p-[40px] lg:p-24"
         >
           {/* Holographic Subtle Accent */}
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-holographic blur-[100px] opacity-20 pointer-events-none rounded-full translate-x-1/4 -translate-y-1/4"></div>
 
-          <div className="relative z-10 flex flex-col md:flex-row gap-16 md:gap-24">
+          <div className="relative z-10 flex flex-col md:flex-row gap-16 md:gap-12 lg:gap-24">
             
             {/* Manifesto / Philosophy Text */}
-            <div className="flex-1 flex flex-col">
-              <h2 className="font-sans text-white/50 text-sm uppercase tracking-[0.2em] font-semibold mb-6">
+            <div className="w-full md:w-[40%] lg:flex-1 flex flex-col">
+              <h2 className="font-sans text-white/50 text-sm md:text-[18px] lg:text-sm uppercase tracking-[0.2em] font-semibold mb-6">
                 Design Philosophy
               </h2>
-              <h3 className="font-bodoni italic text-white text-[clamp(32px,4vw,64px)] leading-[1.1] mb-8">
+              <h3 className="font-bodoni italic text-white text-[clamp(32px,4vw,64px)] md:text-[46px] lg:text-[clamp(32px,4vw,64px)] leading-[1.1] mb-8">
                 Good design is obvious.<br />Great design is transparent.
               </h3>
-              <p className="font-sans text-white/70 text-lg md:text-xl leading-relaxed max-w-xl">
+              <p className="font-sans text-white/70 text-lg md:text-[22px] lg:text-xl md:leading-[1.6] lg:leading-relaxed leading-relaxed max-w-xl">
                 I believe that digital products should not only look stunning but fundamentally solve user problems. By merging strategic UX research with high-fidelity visual craft, I build experiences that humans love to use and businesses rely on.
               </p>
             </div>
 
             {/* Impact Numbers */}
-            <div className="flex-1 flex justify-center border-l-0 md:border-l border-white/10 pl-0 md:pl-16">
-              <div className="grid grid-cols-2 gap-x-8 md:gap-x-16 gap-y-12 w-full">
+            <div className="w-full md:w-[60%] lg:flex-1 flex justify-center border-l-0 md:border-l border-white/10 pl-0 md:pl-10 lg:pl-16">
+              <div className="grid grid-cols-2 gap-x-8 md:gap-x-8 lg:gap-x-16 gap-y-12 w-full">
                 <Counter end={40} suffix="+" label="Projects Delivered" isInView={isInView} />
                 <Counter end={100} suffix="%" label="On-time Delivery" isInView={isInView} />
                 <Counter end={15} suffix="+" label={<>Products Launched <br />from Scratch</>} isInView={isInView} />
@@ -83,12 +83,12 @@ function Counter({ end, suffix, label, isInView }) {
   return (
     <div className="flex flex-col">
       <div 
-        className="text-white text-[clamp(40px,4vw,64px)] leading-none mb-2 font-black italic tracking-wide pr-2"
+        className="text-white text-[clamp(40px,4vw,64px)] md:text-[64px] lg:text-[clamp(40px,4vw,64px)] leading-none mb-2 font-black italic tracking-wide pr-2"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         {count}{suffix}
       </div>
-      <div className="font-bodoni italic text-white/50 text-[clamp(14px,1vw,18px)]">
+      <div className="font-bodoni italic text-white/50 text-[clamp(14px,1vw,18px)] md:text-[22px] lg:text-[clamp(14px,1vw,18px)]">
         {label}
       </div>
     </div>

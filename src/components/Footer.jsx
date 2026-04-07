@@ -9,13 +9,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative z-10 w-full flex flex-col justify-between px-4 md:px-8 pt-32 pb-8 bg-black/60 backdrop-blur-sm border-t border-white/10">
+    <footer className="relative z-10 w-full flex flex-col justify-between px-4 md:px-8 pt-16 md:pt-[56px] lg:pt-32 pb-8 bg-black/60 backdrop-blur-sm border-t border-white/10">
       
       {/* Main Footer Content */}
       <div className="w-full max-w-screen-2xl mx-auto flex flex-col xl:flex-row justify-between items-start xl:items-end mb-16 gap-12">
         
         {/* Epic Giant Text */}
-        <h2 className="font-sans text-[clamp(48px,12vw,240px)] leading-[0.8] font-bold text-white tracking-tighter uppercase relative w-fit mb-0">
+        <h2 className="font-sans text-[clamp(48px,12vw,240px)] md:text-[160px] lg:text-[clamp(48px,12vw,240px)] leading-[0.8] font-bold text-white tracking-tighter uppercase relative w-fit mb-0">
           <span className="relative z-10 inline-block pr-[0.1em] premium-gradient-text text-transparent">
             LET'S TALK
           </span>

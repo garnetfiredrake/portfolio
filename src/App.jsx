@@ -15,7 +15,8 @@ export default function App() {
 
   // Responsive Hook: Detect breakpoint exclusively for swapping native MUX media assets
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    // Escalate to 1024px breakpoint capturing portrait tablets/iPads to ingest portrait-native vertical assets
+    const checkMobile = () => setIsMobile(window.matchMedia("(max-width: 1024px)").matches);
     checkMobile(); // Check on initial mount
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -49,8 +50,8 @@ export default function App() {
         loop
         muted
         playsInline
-        minResolution="720p"
-        className="fixed inset-0 w-full h-full z-0 pointer-events-none"
+        minResolution="2160p"
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none object-cover transform-gpu md:scale-[1.31] lg:scale-100 md:-translate-x-[4px] lg:translate-x-0"
         style={{ 
           '--media-object-fit': 'cover',
           '--media-loading-indicator-display': 'none',
@@ -62,7 +63,7 @@ export default function App() {
       {!isVideoReady && (
         <img
           src={posterUrl}
-          className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none"
+          className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none transform-gpu md:scale-[1.31] lg:scale-100 md:-translate-x-[4px] lg:translate-x-0"
           alt="Intro Frame"
         />
       )}
