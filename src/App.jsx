@@ -18,7 +18,7 @@ export default function App() {
     <div className="relative min-h-screen w-full flex flex-col selection:bg-white/20 overflow-x-hidden">
       {/* Background Video - Fixed so it acts as base for entire scrolling page */}
       <MuxPlayer
-        playbackId="WslAOdcIprA3J00zcgLLf8HMP4RrPTLy9RKFNVQIbfTc"
+        playbackId="o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw"
         autoPlay="muted"
         loop
         muted

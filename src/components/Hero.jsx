@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <main className="relative z-10 flex-1 flex flex-col items-center px-4 md:px-6 w-full pb-[6vh] md:pb-[8vh]">
       {/* Main Title Group - Responsive absolute positioning */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[310px] md:-mt-[42vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[20px] text-center">
+      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[280px] md:-mt-[38vh] w-fit max-w-[95vw] xl:max-w-[1400px] flex flex-col items-center p-[20px] text-center">
 
         {/* Corner Accents */}
         {[
@@ -28,7 +28,7 @@ export default function Hero() {
         ))}
 
         {/* Text Wrapper */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center min-[2560px]:translate-y-[20px]">
           {/* Featured Badge */}
           <motion.div 
             initial={{ scale: 0, opacity: 0, y: 10 }}
@@ -37,7 +37,7 @@ export default function Hero() {
             className="inline-flex mb-2 md:mb-8 cursor-default"
           >
             <div className="py-[clamp(6px,0.31vw,12px)] px-[clamp(12px,1.04vw,40px)] flex items-center justify-center">
-              <span className="text-[#804B5A] text-[clamp(10px,0.65vw,24px)] font-sans font-semibold tracking-[0.1em] uppercase">
+              <span className="text-[#804B5A] text-[clamp(10px,0.65vw,53px)] font-sans font-semibold tracking-[0.1em] uppercase">
                 Featured UI/UX Work
               </span>
             </div>
@@ -45,7 +45,7 @@ export default function Hero() {
 
           {/* Dynamic Headline */}
           <h1 className="text-center flex flex-col items-center justify-center mb-0 w-full relative z-10">
-            <span className="font-serif italic text-white text-[clamp(32px,8vw,48px)] md:text-[clamp(48px,6vw,128px)] leading-none whitespace-nowrap inline-flex tracking-tight">
+            <span className="font-serif italic text-white text-[clamp(32px,8vw,48px)] md:text-[clamp(48px,6vw,282px)] leading-none whitespace-nowrap inline-flex tracking-tight">
               {"web, apps & branding".split('').map((char, index) => (
                 <motion.span
                   key={index}
