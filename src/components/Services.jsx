@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -60,30 +60,12 @@ export default function Services() {
 }
 
 function ServiceRow({ service, index, containerRef }) {
-  // Motion values for the floating image
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  
-  // Springs for smooth movement
-  const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.5 });
-  const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.5 });
 
-  const handlePointerMove = (e) => {
-    // We want the image to follow the cursor (roughly centered on cursor)
-    // To do this reliably across the entire scroll page, we calculate relative to the screen or viewport
-    const rect = e.currentTarget.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - 150; // 150 is half the image width
-    const offsetY = e.clientY - rect.top - 200;  // 200 is half the image height
-    x.set(offsetX);
-    y.set(offsetY);
-  };
 
   return (
     <motion.div
       initial="initial"
-      whileHover="hover"
-      onPointerMove={handlePointerMove}
-      className="group relative flex flex-col md:flex-row md:items-center justify-between py-8 md:py-12 border-t border-white/10 cursor-pointer overflow-visible"
+      className="group relative flex flex-col md:flex-row md:items-center justify-between py-8 md:py-12 border-t border-white/10 overflow-visible"
     >
       {/* Title */}
       <motion.div 
@@ -91,9 +73,9 @@ function ServiceRow({ service, index, containerRef }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 3.2, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 }}
-        className="relative z-20 flex items-center gap-6 md:gap-12 transition-transform duration-500 group-hover:translate-x-4"
+        className="relative z-20 flex items-center gap-6 md:gap-12"
       >
-        <span className="font-serif italic text-white/30 text-[clamp(24px,2vw,40px)] group-hover:text-white transition-colors duration-500">
+        <span className="font-serif italic text-white/30 text-[clamp(24px,2vw,40px)]">
           0{index + 1}
         </span>
         <h3 className="font-sans text-white text-[clamp(40px,5vw,96px)] font-bold tracking-tight uppercase leading-none mix-blend-difference">
@@ -107,7 +89,7 @@ function ServiceRow({ service, index, containerRef }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 3.2, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 + 0.1 }}
-        className="relative z-20 mt-4 md:mt-0 text-white/60 font-sans text-[clamp(14px,1vw,18px)] max-w-sm md:text-right transition-opacity duration-500 opacity-100 md:opacity-40 group-hover:opacity-100"
+        className="relative z-20 mt-4 md:mt-0 text-white/60 font-sans text-[clamp(14px,1vw,18px)] max-w-sm md:text-right opacity-100"
       >
         {service.description}
       </motion.div>
