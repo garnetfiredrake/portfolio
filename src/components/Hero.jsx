@@ -84,48 +84,60 @@ export default function Hero() {
       {/* Bottom Actions - Auto Layout anchored to bottom */}
       <div className="flex flex-col items-center mt-auto w-full max-w-3xl px-4 md:px-8">
         {/* CTA Button */}
-        <motion.button 
-          initial="initial"
-          whileHover="hover"
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
-          className="group relative inline-flex items-center justify-center rounded-full bg-white/5 p-[clamp(2px,0.2vw,8px)] backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] active:scale-95 cursor-pointer mb-[clamp(16px,1.25vw,48px)]"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 25 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ delay: 1.0, duration: 0.8, type: "spring", stiffness: 90, damping: 20 }}
+          className="w-full flex justify-center"
         >
-          <div className="relative flex w-full items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-[clamp(24px,2.08vw,80px)] py-[clamp(12px,0.83vw,32px)] transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/40 overflow-hidden">
-            <div className="relative z-10 flex items-center text-white group-hover:text-white transition-colors">
-              <motion.svg 
-                variants={{
-                  initial: { rotate: 0 },
-                  hover: { rotate: 360 }
-                }}
-                transition={{ type: "spring", stiffness: 260, damping: 10, mass: 1 }}
-                className="w-[clamp(16px,1.25vw,48px)] h-[clamp(16px,1.25vw,48px)] mr-[clamp(12px,0.83vw,32px)]" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </motion.svg>
-              <div className="flex flex-col text-left">
-                <span className="font-sans font-medium text-[clamp(14px,0.88vw,34px)] tracking-wide mb-[clamp(2px,0.2vw,8px)]">
-                  View My Latest Work
-                </span>
-                <span className="font-serif italic text-white/80 text-[clamp(12px,0.72vw,28px)]">
-                  Scroll to explore
-                </span>
+          <motion.button 
+            initial="initial"
+            whileHover="hover"
+            onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+            className="group relative inline-flex items-center justify-center rounded-full bg-white/5 p-[clamp(2px,0.2vw,8px)] backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] active:scale-95 cursor-pointer mb-[clamp(16px,1.25vw,48px)]"
+          >
+            <div className="relative flex w-full items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-[clamp(24px,2.08vw,80px)] py-[clamp(12px,0.83vw,32px)] transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/40 overflow-hidden">
+              <div className="relative z-10 flex items-center text-white group-hover:text-white transition-colors">
+                <motion.svg 
+                  variants={{
+                    initial: { rotate: 0 },
+                    hover: { rotate: 360 }
+                  }}
+                  transition={{ type: "spring", stiffness: 260, damping: 10, mass: 1 }}
+                  className="w-[clamp(16px,1.25vw,48px)] h-[clamp(16px,1.25vw,48px)] mr-[clamp(12px,0.83vw,32px)]" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </motion.svg>
+                <div className="flex flex-col text-left">
+                  <span className="font-sans font-medium text-[clamp(14px,0.88vw,34px)] tracking-wide mb-[clamp(2px,0.2vw,8px)]">
+                    View My Latest Work
+                  </span>
+                  <span className="font-serif italic text-white/80 text-[clamp(12px,0.72vw,28px)]">
+                    Scroll to explore
+                  </span>
+                </div>
               </div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
-        </motion.button>
+          </motion.button>
+        </motion.div>
 
         {/* Sub-headline */}
-        <p className="font-sans text-white/95 w-full text-center text-[clamp(14px,0.83vw,32px)] leading-relaxed [text-shadow:0_4px_16px_rgba(128,75,90,0.85)]">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.25, duration: 0.8, ease: "easeOut" }}
+          className="font-sans text-white/95 w-full text-center text-[clamp(14px,0.83vw,32px)] leading-relaxed [text-shadow:0_4px_16px_rgba(128,75,90,0.85)]"
+        >
           <span className="landscape:whitespace-nowrap portrait:whitespace-normal">
             I design intuitive UI/UX for web, apps, SaaS dashboards and cross-platform setups.
           </span>
           <br />
           Elevating your brand with cohesive VI and identity design.
-        </p>
+        </motion.p>
       </div>
     </main>
   );

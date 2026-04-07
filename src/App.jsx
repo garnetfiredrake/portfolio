@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -9,6 +10,18 @@ import Footer from './components/Footer';
 import MuxPlayer from "@mux/mux-player-react";
 
 export default function App() {
+  const [isVideoReady, setIsVideoReady] = useState(false);
+
+  // Absolute Choreographic Timeline:
+  // 0.0s - 1.0s: Pure black smoothly dissolves to reveal Pinterest Pink Gradient (Dark-to-Light).
+  // 1.0s - 1.8s: Pink Gradient dissolves to reveal the absolute Static 0-th Frame Image.
+  // 1.8s - 1.925s: Static 0-th frame holds absolutely perfectly still for 0.125s.
+  // 1.925s: Lock releases! Static frame hard-cuts to moving video, and Hero text orchestrates.
+  useEffect(() => {
+    const choreographyTimer = setTimeout(() => setIsVideoReady(true), 1925);
+    return () => clearTimeout(choreographyTimer);
+  }, []);
+
   const { scrollY } = useScroll();
   
   // Fade in the glass overlay as user scrolls down the first 800px
@@ -16,15 +29,44 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen w-full flex flex-col selection:bg-white/20 overflow-x-hidden">
-      {/* Background Video - Fixed so it acts as base for entire scrolling page */}
       <MuxPlayer
         playbackId="o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw"
+        poster="https://image.mux.com/o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw/thumbnail.jpg?time=0"
         autoPlay="muted"
         loop
         muted
         playsInline
         className="fixed inset-0 w-full h-full z-0 pointer-events-none"
-        style={{ '--media-object-fit': 'cover' }}
+        style={{ 
+          '--media-object-fit': 'cover',
+          '--media-loading-indicator-display': 'none',
+          '--media-error-display': 'none'
+        }}
+      />
+
+      {/* Layer 1: STATIC 0-TH FRAME MASK (Holds the video perfectly still) */}
+      {!isVideoReady && (
+        <img
+          src="https://image.mux.com/o802JTJMU00OY7Jxr8h02USIAnpFvm4byVB5IkOMJujkmw/thumbnail.jpg?time=0"
+          className="fixed inset-0 w-full h-full object-cover z-[1] pointer-events-none"
+          alt="Intro Frame"
+        />
+      )}
+
+      {/* Layer 2: PINTEREST PINK GRADIENT (The abstract Dark-to-Light phase) */}
+      <motion.div
+        className="fixed inset-0 w-full h-full bg-gradient-to-b from-[#E6CCD7] via-[#D89CAE] to-[#CD7D94] z-[2] pointer-events-none"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ delay: 1.0, duration: 0.8, ease: "easeInOut" }} // Starts fading precisely when Layer 3 finishes
+      />
+
+      {/* Layer 3: PURE BLACK CINEMATIC CURTAIN (Fades out immediately to reveal Dark-to-Light Pink) */}
+      <motion.div 
+        className="fixed inset-0 w-full h-full bg-[#0a0a0a] z-[3] pointer-events-none"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 1.0, ease: "easeOut" }} // Fades exactly in the first 1.0s
       />
 
       {/* Progressive Scroll Glass Overlay */}
@@ -38,8 +80,8 @@ export default function App() {
         {/* Transparent Navbar */}
         <Navbar />
 
-        {/* Hero Content Block */}
-        <Hero />
+        {/* Hero Content Block - Renders only when background is ready to choreograph entrance */}
+        {isVideoReady && <Hero />}
       </div>
 
       {/* Screen 2: Marquee */}
