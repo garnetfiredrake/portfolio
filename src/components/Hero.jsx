@@ -76,7 +76,7 @@ export default function Hero() {
           initial="initial"
           whileHover="hover"
           onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
-          className="group relative inline-flex items-center justify-center rounded-full bg-white/5 p-[clamp(2px,0.2vw,8px)] backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] active:scale-95 mb-[clamp(16px,1.25vw,48px)]"
+          className="group relative inline-flex items-center justify-center rounded-full bg-white/5 p-[clamp(2px,0.2vw,8px)] backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] active:scale-95 cursor-pointer mb-[clamp(16px,1.25vw,48px)]"
         >
           <div className="relative flex w-full items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-[clamp(24px,2.08vw,80px)] py-[clamp(12px,0.83vw,32px)] transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/40 overflow-hidden">
             <div className="relative z-10 flex items-center text-white group-hover:text-white transition-colors">
