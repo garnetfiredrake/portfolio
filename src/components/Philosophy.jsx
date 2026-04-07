@@ -26,7 +26,7 @@ export default function Philosophy() {
             
             {/* Manifesto / Philosophy Text */}
             <div className="flex-1 flex flex-col">
-              <h2 className="font-sans text-[#804B5A] text-sm uppercase tracking-[0.2em] font-semibold mb-6">
+              <h2 className="font-sans text-white/50 text-sm uppercase tracking-[0.2em] font-semibold mb-6">
                 Design Philosophy
               </h2>
               <h3 className="font-bodoni italic text-white text-[clamp(32px,4vw,64px)] leading-[1.1] mb-8">
